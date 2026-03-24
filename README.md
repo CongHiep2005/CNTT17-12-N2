@@ -13,10 +13,7 @@
 
 ## 1.1. Clone project.
 
-git clone https://gitlab.com/anhlta/odoo-fitdnu.git
-git checkout cntt15_01
-git clone https://gitlab.com/anhlta/odoo-fitdnu.git
-git checkout 
+git clone https://github.com/CongHiep2005/CNTT17-12-N2.git
 
 ## 1.2. cài đặt các thư viện cần thiết
 
