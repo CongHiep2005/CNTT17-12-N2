@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Bảng Lương Tree View -->
+    <record id="view_bang_luong_tree" model="ir.ui.view">
+        <field name="name">bang.luong.tree</field>
+        <field name="model">bang.luong</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="nhan_vien_id"/>
+                <field name="thang"/>
+                <field name="nam"/>
+                <field name="tong_ngay_cong"/>
+                <field name="tong_phat"/>
+                <field name="luong_thuc_lanh"/>
+                <field name="trang_thai"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Bảng Lương Form View -->
+    <record id="view_bang_luong_form" model="ir.ui.view">
+        <field name="name">bang.luong.form</field>
+        <field name="model">bang.luong</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1><field name="name"/></h1>
+                    <group>
+                        <group>
+                            <field name="nhan_vien_id"/>
+                            <field name="thang"/>
+                            <field name="nam"/>
+                            <field name="trang_thai"/>
+                        </group>
+                        <group>
+                            <field name="tong_ngay_cong"/>
+                            <field name="tong_phut_di_muon"/>
+                            <field name="tong_phut_ve_som"/>
+                            <field name="tong_phat"/>
+                        </group>
+                    </group>
+                    <separator string="Lương"/>
+                    <group>
+                        <field name="luong_co_ban"/>
+                        <field name="luong_thuc_lanh"/>
+                    </group>
+                    <separator string="Phiếu Lương"/>
+                    <field name="phieu_luong_ids">
+                        <tree>
+                            <field name="name"/>
+                            <field name="luong_co_ban"/>
+                            <field name="so_ngay_cong"/>
+                            <field name="tong_phat"/>
+                            <field name="luong_net"/>
+                            <field name="trang_thai"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action Bảng Lương -->
+    <record id="action_bang_luong" model="ir.actions.act_window">
+        <field name="name">Bảng Lương</field>
+        <field name="res_model">bang.luong</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu Tính Lương App -->
+    <menuitem id="menu_tinh_luong_root" name="Tính Lương" sequence="186"/>
+
+    <!-- Menu Bảng Lương -->
+    <menuitem id="menu_bang_luong" name="Bảng Lương" action="action_bang_luong" parent="menu_tinh_luong_root" sequence="1"/>
+</odoo>

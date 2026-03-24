@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Phiếu Lương Tree View -->
+    <record id="view_phieu_luong_tree" model="ir.ui.view">
+        <field name="name">phieu.luong.tree</field>
+        <field name="model">phieu.luong</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="nhan_vien_id"/>
+                <field name="thang"/>
+                <field name="nam"/>
+                <field name="luong_co_ban"/>
+                <field name="so_ngay_cong"/>
+                <field name="luong_net"/>
+                <field name="trang_thai"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Phiếu Lương Form View -->
+    <record id="view_phieu_luong_form" model="ir.ui.view">
+        <field name="name">phieu.luong.form</field>
+        <field name="model">phieu.luong</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1><field name="name"/></h1>
+                    <group>
+                        <group>
+                            <field name="bang_luong_id"/>
+                            <field name="nhan_vien_id"/>
+                            <field name="thang"/>
+                            <field name="nam"/>
+                            <field name="trang_thai"/>
+                        </group>
+                        <group>
+                            <field name="luong_co_ban"/>
+                            <field name="so_ngay_cong"/>
+                            <field name="phat_di_muon"/>
+                            <field name="phat_ve_som"/>
+                        </group>
+                    </group>
+                    <separator string="Tính toán"/>
+                    <group>
+                        <field name="tong_phat"/>
+                        <field name="luong_net"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action Phiếu Lương -->
+    <record id="action_phieu_luong" model="ir.actions.act_window">
+        <field name="name">Phiếu Lương</field>
+        <field name="res_model">phieu.luong</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu Phiếu Lương -->
+    <menuitem id="menu_phieu_luong" name="Phiếu Lương" action="action_phieu_luong" parent="menu_tinh_luong_root" sequence="2"/>
+</odoo>
